@@ -11,10 +11,12 @@ const includes = _.includes
 
 const isDocker = process.env.IS_DOCKER
 const STOOGES = {
-  curly: { hostname: process.env.STOOGES_SERVICE_HOST || isDocker ? 'curly' : 'localhost', port: 6001 },
-  larry: { hostname: process.env.STOOGES_SERVICE_HOST || isDocker ? 'larry' : 'localhost', port: 6002 },
-  moe: { hostname: process.env.STOOGES_SERVICE_HOST || isDocker ? 'moe' : 'localhost', port: 6003 }
+  curly: { hostname: process.env.STOOGES_SERVICE_HOST || (isDocker ? 'curly' : 'localhost'), port: 6001 },
+  larry: { hostname: process.env.STOOGES_SERVICE_HOST || (isDocker ? 'larry' : 'localhost'), port: 6002 },
+  moe: { hostname: process.env.STOOGES_SERVICE_HOST || (isDocker ? 'moe' : 'localhost'), port: 6003 }
 }
+console.log('env:', process.env)
+
 const BOPS = [
   'blamo', 'whamo', 'flick', 'poke', 'punch', 'slap', 'BOPSkie', 'smack', 'swing'
 ]
@@ -38,7 +40,7 @@ module.exports = {
   },
 
 configureRoutes ({ app, stooge }) {
-    app.get('/', (req, res) => res.send('Greetings!  Did you need something?  GET /beep, perhaps?'))
+    app.get('/', (req, res) => res.send('Greetings, stooge-master!  Did you need something?  GET /beep, perhaps?'))
     app.get('/beep', (req, res) => {
       const query = qs.parse(req.query)
       let toBop = query.toBop ? query.toBop : Object.keys(STOOGES)

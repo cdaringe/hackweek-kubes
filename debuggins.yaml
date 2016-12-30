@@ -14,6 +14,10 @@ spec:
     protocol: TCP
     name: larry
     nodePort: 32002
+  - port: 6003
+    protocol: TCP
+    name: moe
+    nodePort: 32003
   selector:
     run: stooges
   type: NodePort
@@ -33,6 +37,7 @@ spec:
       containers:
       - name: stooge-curly
         image: cdaringe/stooge
+        imagePullPolicy: Always
         ports:
         - containerPort: 6001
         env:
@@ -54,8 +59,31 @@ spec:
       containers:
       - name: stooge-larry
         image: cdaringe/stooge
+        imagePullPolicy: Always
         ports:
         - containerPort: 6002
         env:
         - name: STOOGE
           value: larry
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: stooges-moe
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: stooges
+        stooge: moe
+    spec:
+      containers:
+      - name: stooge-moe
+        image: cdaringe/stooge
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 6003
+        env:
+        - name: STOOGE
+          value: moe
