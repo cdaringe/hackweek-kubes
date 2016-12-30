@@ -1,0 +1,61 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: stooges
+  labels:
+    run: stooges
+spec:
+  ports:
+  - port: 6001
+    protocol: TCP
+    name: curly
+    nodePort: 32001
+  - port: 6002
+    protocol: TCP
+    name: larry
+    nodePort: 32002
+  selector:
+    run: stooges
+  type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: stooges-curly
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: stooges
+        stooge: curly
+    spec:
+      containers:
+      - name: stooge-curly
+        image: cdaringe/stooge
+        ports:
+        - containerPort: 6001
+        env:
+        - name: STOOGE
+          value: curly
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: stooges-larry
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: stooges
+        stooge: larry
+    spec:
+      containers:
+      - name: stooge-larry
+        image: cdaringe/stooge
+        ports:
+        - containerPort: 6002
+        env:
+        - name: STOOGE
+          value: larry
