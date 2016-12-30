@@ -64,6 +64,8 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 6001
+        - containerPort: 6002
+        - containerPort: 6003
         env:
         - name: STOOGE
           value: curly
@@ -85,7 +87,9 @@ spec:
         image: cdaringe/stooge:latest
         imagePullPolicy: Always
         ports:
+        - containerPort: 6001
         - containerPort: 6002
+        - containerPort: 6003
         env:
         - name: STOOGE
           value: larry
@@ -107,6 +111,8 @@ spec:
         image: cdaringe/stooge:latest
         imagePullPolicy: Always
         ports:
+        - containerPort: 6001
+        - containerPort: 6002
         - containerPort: 6003
         env:
         - name: STOOGE
