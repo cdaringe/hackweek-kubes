@@ -8,7 +8,7 @@
     "perish": "^1.0.0"
   },
   "scripts": {
-    "build-image": "docker build . -t cdaringe/stooge"
+    "build-image": "node scripts/build-publish-image"
   },
   "devDependencies": {
     "commander": "^2.9.0"

@@ -1,0 +1,48 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'build-image' ]
+2 info using npm@3.10.10
+3 info using node@v7.2.1
+4 verbose run-script [ 'prebuild-image', 'build-image', 'postbuild-image' ]
+5 info lifecycle stooge@1.0.0~prebuild-image: stooge@1.0.0
+6 silly lifecycle stooge@1.0.0~prebuild-image: no script for prebuild-image, continuing
+7 info lifecycle stooge@1.0.0~build-image: stooge@1.0.0
+8 verbose lifecycle stooge@1.0.0~build-image: unsafe-perm in lifecycle true
+9 verbose lifecycle stooge@1.0.0~build-image: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/cdieringer/src/hackweek-kubes/packages/stooge/node_modules/.bin:/home/cdieringer/node/:/home/cdieringer/node/selenium_drvers_osx/:/Users/cdieringer/anaconda3/bin:/home/cdieringer/node/:/home/cdieringer/node/selenium_drvers_osx/:/usr/local/bin:~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/local:/Users/cdieringer/bin:/usr/local/bin/npm:/Users/cdieringer/bin:/usr/local/bin/npm
+10 verbose lifecycle stooge@1.0.0~build-image: CWD: /Users/cdieringer/src/hackweek-kubes/packages/stooge
+11 silly lifecycle stooge@1.0.0~build-image: Args: [ '-c', 'docker build . -t cdaringe/stooge:$VERSION' ]
+12 silly lifecycle stooge@1.0.0~build-image: Returned: code: 125  signal: null
+13 info lifecycle stooge@1.0.0~build-image: Failed to exec build-image script
+14 verbose stack Error: stooge@1.0.0 build-image: `docker build . -t cdaringe/stooge:$VERSION`
+14 verbose stack Exit status 125
+14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at EventEmitter.emit (events.js:191:7)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at ChildProcess.emit (events.js:191:7)
+14 verbose stack     at maybeClose (internal/child_process.js:885:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+15 verbose pkgid stooge@1.0.0
+16 verbose cwd /Users/cdieringer/src/hackweek-kubes/packages/stooge
+17 error Darwin 15.6.0
+18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "build-image"
+19 error node v7.2.1
+20 error npm  v3.10.10
+21 error code ELIFECYCLE
+22 error stooge@1.0.0 build-image: `docker build . -t cdaringe/stooge:$VERSION`
+22 error Exit status 125
+23 error Failed at the stooge@1.0.0 build-image script 'docker build . -t cdaringe/stooge:$VERSION'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the stooge package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     docker build . -t cdaringe/stooge:$VERSION
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs stooge
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls stooge
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
