@@ -1,21 +1,21 @@
 version: '2'
 services:
   curly:
-    image: stooge
+    image: cdaringe/stooge:latest
     environment:
       - STOOGE=curly
       - IS_DOCKER=true
     ports:
       - 6001:6001
   larry:
-    image: stooge
+    image: cdaringe/stooge:latest
     environment:
       - STOOGE=larry
       - IS_DOCKER=true
     ports:
       - 6002:6002
   moe:
-    image: stooge
+    image: cdaringe/stooge:latest
     environment:
       - STOOGE=moe
       - IS_DOCKER=true
