@@ -1,0 +1,23 @@
+version: '2'
+services:
+  curly:
+    image: stooge
+    environment:
+      - STOOGE=curly
+      - IS_DOCKER=true
+    ports:
+      - 6001:6001
+  larry:
+    image: stooge
+    environment:
+      - STOOGE=larry
+      - IS_DOCKER=true
+    ports:
+      - 6002:6002
+  moe:
+    image: stooge
+    environment:
+      - STOOGE=moe
+      - IS_DOCKER=true
+    ports:
+      - 6003:6003

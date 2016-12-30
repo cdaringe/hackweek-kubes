@@ -1,0 +1,16 @@
+{
+  "name": "stooge",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "common": "../common",
+    "perish": "^1.0.0"
+  },
+  "scripts": {
+    "build-image": "docker build . -t cdaringe/stooge"
+  },
+  "devDependencies": {
+    "commander": "^2.9.0"
+  }
+}
