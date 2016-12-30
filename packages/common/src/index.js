@@ -11,9 +11,9 @@ const includes = _.includes
 
 const isDocker = process.env.IS_DOCKER
 const STOOGES = {
-  curly: { hostname: isDocker ? 'curly' : 'localhost', port: 6001 },
-  larry: { hostname: isDocker ? 'larry' : 'localhost', port: 6002 },
-  moe: { hostname: isDocker ? 'moe' : 'localhost', port: 6003 }
+  curly: { hostname: process.env.STOOGES_SERVICE_HOST || isDocker ? 'curly' : 'localhost', port: 6001 },
+  larry: { hostname: process.env.STOOGES_SERVICE_HOST || isDocker ? 'larry' : 'localhost', port: 6002 },
+  moe: { hostname: process.env.STOOGES_SERVICE_HOST || isDocker ? 'moe' : 'localhost', port: 6003 }
 }
 const BOPS = [
   'blamo', 'whamo', 'flick', 'poke', 'punch', 'slap', 'BOPSkie', 'smack', 'swing'
