@@ -35,8 +35,12 @@
 ### usage
 
 - to make sure everything boots up ok, let's run this thing sans clustering
-  - cd to `packages/stooge`, and `npm run build-image` if you haven't already
   - `docker-compose up` to launch & network all of the containers!
-  - browse to localhost:600{1,2,3}/beep.  observe.
+  - browse to localhost:600{1,2,3}/beep. observe.
   - `docker-compose down`
 
+but you wanna cluster?
+  - `kubectl -f three-stooge-services.yaml`
+  - wait for `kubectl get pods` to show all three pods running
+  - visit `localhost:3200{1,2,3}`, and observe the response.
+    - fails `/beep`, at least on my machine. see https://github.com/kubernetes/kubernetes/issues/39329
