@@ -40,7 +40,7 @@
   - `docker-compose down`
 
 but you wanna cluster?
-  - `kubectl -f three-stooge-services.yaml`
+  - `kubectl -f three-stooge-services.yaml` after you've set the cluster context (see vagrant coreos docs above)
   - wait for `kubectl get pods` to show all three pods running
   - visit `localhost:3200{1,2,3}`, and observe the response.
     - fails `/beep`, at least on my machine. see https://github.com/kubernetes/kubernetes/issues/39329
