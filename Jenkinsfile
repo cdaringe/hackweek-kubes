@@ -1,5 +1,8 @@
 #!groovy
 node {
+  stage('checkout') {
+    checkout scm
+  }
   stage('make er buck') {
     sh 'docker-compose up'
   }
