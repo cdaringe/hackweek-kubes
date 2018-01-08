@@ -6,7 +6,7 @@
   "author": "cdaringe <christopher.dieringer@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "lerna": "2.0.0-beta.31"
+    "lerna": "2.5.1"
   },
   "scripts": {
     "bootstrap": "lerna bootstrap"
