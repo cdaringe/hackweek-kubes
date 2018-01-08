@@ -1,5 +1,7 @@
 # hackweek-kubernetes
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/cdaringe/hackweek-kubes.svg)](https://greenkeeper.io/)
+
 ## what it does
 
 - creates a kubernetes cluster
